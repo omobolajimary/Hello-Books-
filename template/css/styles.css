@@ -1,0 +1,107 @@
+.img-fluid{
+    max-width: 100%; 
+    height: auto;
+    width: 100% \9;
+} 
+#searchItem{
+    width: 75%;
+    position: absolute;
+    margin-right: 0px;
+}
+.searchbtn{
+    width: 20%;
+    height: 38px;
+    position: relative;
+    float: right;
+}
+.col-sm-3{
+    max-height: 600px;
+    display:block;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+.card{
+    margin: 10px 10px;
+    padding: 10px;
+
+}
+.media .img img{
+    display:block;
+    
+}
+.img-thumbnail{
+    margin: 10px 0px 10px 0px;
+}
+
+.media-body{
+    display:block;
+    overflow:hidden; 
+}
+.fa-thumbs-up{
+    color:#304ffe;
+    size:200%;
+
+}
+.fa-thumbs-down{
+    color:#a30000;
+    font-size: 60px;
+
+}
+body{
+    margin:50px;
+    padding: 40px;
+    
+}
+.login, .signup{
+    padding-top:120px;
+}
+/*#D8BFD8*/
+.container-fluid{
+   margin-top:20px;
+}
+ul {
+    list-style-type: none;
+    margin:-40px;
+    padding-right: 30px;
+    overflow: hidden;
+    background-color: #D8BFD8;
+    
+}
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    /*color: white;*/
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    list-style-type: none;
+    color:white;
+    margin-right: 20px;
+    
+}
+
+li a:hover {
+    background-color: gray;
+     color:white;
+}
+/* Change the link color on hover */
+
+
+/*li a.active {
+    background-color: #4CAF50;
+    
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}*/
