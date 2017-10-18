@@ -10,6 +10,32 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+        <div class ="nav">
+        <ul>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li class="dropdown">
+                <button class="dropbtn"> Me
+                    <i class="fa fa-caret-down"></i>
+                </button>
+        <div class="dropdown-content">
+            <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <clipPath id="">
+                         <rect x="0" y="0" width="30" height="30" />
+                    </clipPath>
+                </defs>
+                <circle cx="20" cy="20" r="20" clip-path="https://avatars1.githubusercontent.com/u/23702327?v=4&u=47417231767a20c385643d8e41a0a530d76efb97&s=400" />
+            </svg>-->
+            <a href="profile.html">Your Profile</a>
+            <a href="favorite_book.html">Your Favorites Book</a>
+            <a href="borrow_book.html">Borrowed Book</a>
+            <a href="signout"> Sign Out</a>
+    </div>
+  </li>
+            <li><a href="index.html">Home</a></li>
+  
+        </ul>
+    </div>
     <body>
     
         <div class="container-fluid detail">
@@ -27,14 +53,37 @@
                 <textarea id="addReview" name="addReview" cols="150" rows="2" ></textarea><br>
                 <button class= "btn btn-primary "onclick ="add()" > Add Review</button>
         </div>
-       
-    
+       <footer>
+            <div class ="footer">
+                <h4>Popular Books</h4>
+                <div class = "row">
+                    <div class= "col-sm-4">
+                        <p><a href="catalog.html">The C++ Programming Language</a></p>
+                        <p><a href="catalog.html">Introducing Java8</a></p>
+                        <p><a href="catalog.html">Advance Java Programming Book</a></p>
+                        
+                    </div>
+                    <div class= "col-sm-4">
+                        <p><a href="catalog.html">The C++ Programming Language</a></p>
+                        <p><a href="catalog.html">Introducing Java8</a></p>
+                        <p><a href="catalog.html">Advance Java Programming Book</a></p>
+                        
+                    </div>
+                    <div class= "col-sm-4">
+                        <p><a href="catalog.html">The C++ Programming Language</a></p>
+                        <p><a href="catalog.html">Introducing Java8</a></p>
+                        <p><a href="catalog.html">Advance Java Programming Book</a></p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/book.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src= "js/book.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <h6> ©2017. Hello Books!</h6>
   </body>
 </html>

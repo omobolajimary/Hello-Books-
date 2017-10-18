@@ -8,22 +8,33 @@
         <!-- Bootstrap CSS -->
         <link rel = "stylesheet" href = "css/styles.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    
     <div class ="nav">
         <ul>
             <li><a href="catalog.html">Catalog</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a class="active" href="index.html">Home</a></li>
+            <li class="dropdown">
+                <button class="dropbtn"> Me
+                    <i class="fa fa-caret-down"></i>
+                </button>
+        <div class="dropdown-content">
+            <a href="profile.html">View Profile</a>
+            <a href="signout"> Sign Out</a>
+    </div>
+  </li>
+            <li><a href="index.html">Home</a></li>
+  
         </ul>
     </div>
     <body>
         <div class="container-fluid">
             <div class = "row">
                 <div class ="col-sm-8">
-                    <h4>We've got lot of books. Enjoy!!!</h4>
+                    <h4><span style="font-size:40px;">We've got lot of books. Enjoy!!!</h4>
                 </div>
                 <div class = "col-sm-4">
-                    <input type="search" class="form-control search" id="searchItem"  placeholder="Search"><button class="searchbtn"> Go</button>
+                    <input type="search" class="form-control search" id="searchItem" name="search" placeholder="Search"><button class="searchbtn"> Go</button>
                 </div>
             </div>
         
