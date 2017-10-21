@@ -61,11 +61,8 @@ const dummyData = {
 		"author": "Jameson Hernandez"
 	}
     ]
+	
 };
-let express = require('express');
-let api = express();
 
-// send necessary data to client on request
-api.get('/books', (req, res) => {
-  return res.json(dummyData.books);
+module.exports = dummyData.books;
 

@@ -1,4 +1,4 @@
-const books = require("../models").dummyData.books;
+const dummyData = require("../models/book.js");
 
 
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
         if(req.body.bookName === ""){
             res.json({message:"Book Name is required"})
         }
-        books.findOne({
+        dummyData.books.findOne({
             where: {
                 Name: req.body.bookName,
             },
@@ -15,10 +15,10 @@ module.exports = {
             if(Name){
                 res.status(400).send({status:false, message:'Book Name already exist'});
             }
-            books.create({
+            book.create({
                 Name : req.body.bookName,
             })
-            .then((books) =>{
+            .then((book) =>{
                 res.status(200).send({ status: true, message:'Successful', data:book});
             });
         })
