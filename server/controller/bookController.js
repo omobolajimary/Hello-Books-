@@ -1,14 +1,23 @@
-const dummyData = require("../models/book.js");
+const books = require("../models/book.js");
 
 
 module.exports = {
+findOne(books,key,value) {
+        for(var i=0; i<books.length;i++){
+            if(books[i][key]===value) {
+               return books[i];
+       }
+    }
+    return null;
+},
     books(req, res) {
         if(req.body.bookName === ""){
             res.json({message:"Book Name is required"})
         }
-        dummyData.books.findOne({
+        books.findOne({
             where: {
-                Name: req.body.bookName,
+                key:req.body.id,
+                value: req.body.bookName,
             },
         })
         .then((Name) =>{

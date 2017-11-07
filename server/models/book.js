@@ -1,5 +1,4 @@
-const dummyData = {
-    books: [
+ const books= [
         {
 		"bookId": "W4P 0Z1",
 		"bookName": "eu elit. Nulla facilisi. Sed",
@@ -61,8 +60,5 @@ const dummyData = {
 		"author": "Jameson Hernandez"
 	}
     ]
-	
-};
 
-module.exports = dummyData.books;
 
