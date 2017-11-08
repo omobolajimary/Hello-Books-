@@ -1,63 +1,75 @@
- const books= [
+ [
         {
-		"bookId": "W4P 0Z1",
+		"bookId": "1",
 		"bookName": "eu elit. Nulla facilisi. Sed",
-		"author": "Heather Washington"
+		"author": "Heather Washington",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "G5Y 5Z0",
+		"bookId": "2",
 		"bookName": "in faucibus orci luctus et",
-		"author": "Nola Fuller"
+		"author": "Nola Fuller",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "A6Z 8P4",
+		"bookId": "3",
 		"bookName": "cursus, diam at pretium aliquet,",
-		"author": "Vivien Spence"
+		"author": "Vivien Spence",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "C5H 9B3",
+		"bookId": "4",
 		"bookName": "vehicula risus. Nulla eget metus",
-		"author": "Shelley Foreman"
+		"author": "Shelley Foreman",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "U7Z 7C4",
+		"bookId": "5",
 		"bookName": "posuere cubilia Curae; Phasellus ornare.",
-		"author": "Beau Harrington"
+		"author": "Beau Harrington",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "M2L 2N6",
+		"bookId": "6",
 		"bookName": "sapien. Aenean massa. Integer vitae",
-		"author": "Jordan Keith"
+		"author": "Jordan Keith",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "G9M 0I0",
+		"bookId": "7",
 		"bookName": "Aliquam vulputate ullamcorper magna. Sed",
-		"author": "Laurel Owen"
+		"author": "Laurel Owen",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "T4I 4D1",
+		"bookId": "8",
 		"bookName": "nonummy ac, feugiat non, lobortis",
-		"author": "Leo Hicks"
+		"author": "Leo Hicks",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "P6U 2K8",
+		"bookId": "9",
 		"bookName": "consequat nec, mollis vitae, posuere",
-		"author": "Alfreda Curry"
+		"author": "Alfreda Curry",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "S2A 6L3",
+		"bookId": "10",
 		"bookName": "Mauris quis turpis vitae purus",
-		"author": "Drew Sharpe"
+		"author": "Drew Sharpe",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "N8G 7E3",
+		"bookId": "11",
 		"bookName": "risus varius orci, in consequat",
-		"author": "Eric White"
+		"author": "Eric White",
+		"bookStatus":"available"
 	},
 	{
-		"bookId": "M2M 9X7",
+		"bookId": "12",
 		"bookName": "ac sem ut dolor dapibus",
-		"author": "Jameson Hernandez"
+		"author": "Jameson Hernandez",
+		"bookStatus":"available"
 	}
     ]
 
