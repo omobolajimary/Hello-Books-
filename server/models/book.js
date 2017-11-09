@@ -1,5 +1,5 @@
- [
-        {
+const books= [
+    {
 		"bookId": "1",
 		"bookName": "eu elit. Nulla facilisi. Sed",
 		"author": "Heather Washington",
@@ -72,5 +72,6 @@
 		"bookStatus":"available"
 	}
     ]
+	module.exports = books;
 
 
