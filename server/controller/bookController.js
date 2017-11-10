@@ -20,17 +20,12 @@ module.exports = {
             }
             
     },
-//API to get a book
-    // getSingleBook (req, res) {
-    //     const book = books.getById(req.params.bookId);
-    //         return res.status(200).json(book.bookid );
-    //},
 //API to modify a book
     update (req, res) {
-        const bookId = parseInt(req.params.bookId);
-        const exist = books.includes(books.bookId);
-        console.log(books.includes(books.bookId));
-            if(exist==false){
+        const bookId = parseInt(req.params.bookId, 10);
+        const exist = books.filter(books=> books.bookId===bookId);
+        console.log(books.filter(books=> books.bookId===bookId));
+            if(!exist){
                 return res.status(400).json({message:"Book does not exist"})
             }
 
