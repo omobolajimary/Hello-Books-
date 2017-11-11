@@ -11,7 +11,7 @@ module.exports = {
        
         const bookId = parseInt(req.params.bookId, 10);
         const bookExist = books.filter(r => r.bookId === bookId)[0];
-
+console.log(bookId)
         if (!bookId) {
             res.status(404).json("This book does not exist")
         }
