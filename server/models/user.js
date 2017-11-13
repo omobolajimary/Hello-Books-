@@ -1,18 +1,18 @@
 const user = [
     {
-        "userId ":"1",
+        "userId":"1",
         "userName":"reagan",
         "email":"reagan@gmail.com"
 
     },
     {
-        "userId ":"2",
+        "userId":"2",
         "userName":"gregg",
         "email":"gregg@gmail.com"
 
     },
     {
-        "userId ":"3",
+        "userId":"3",
         "userName":"beakon",
         "email":"beakon@gmail.com"
 

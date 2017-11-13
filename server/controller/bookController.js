@@ -22,19 +22,24 @@ module.exports = {
     },
 //API to modify a book
     update (req, res) {
-        const bookId = parseInt(req.params.bookId, 10);
-        const exist = books.filter(books=> books.bookId===bookId);
-        console.log(books.filter(books=> books.bookId===bookId));
-            if(!exist){
-                return res.status(400).json({message:"Book does not exist"})
-            }
+        const bookIden = parseInt(req.params.bookId, 10);
+	    let bookExist; 
+        books.forEach((book) =>{
+          const bookNumber = parseInt(book.bookId,10);
+          if (bookNumber === bookIden)
+          {
+            bookExist= book;
+            return bookExist
+          }
+        });
+        if (!bookExist) {
+            res.status(404).json("This book does not exist")
+        }
 
-            else{
-                return res.status(201).json(books[bookId-1] = req.body);
-                
-            } 
+        else{
+            return res.status(201).json(books[bookId-1] = req.body);
             
-
+        } 
     },
 //API endpoint to get all books
     getAllBooks (req, res) {
