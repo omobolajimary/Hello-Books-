@@ -192,7 +192,7 @@ module.exports = {
         let userFavorites = [];
         let favbooks = userExist.bookId
         let userId = userExist.userId
-      
+      userFavorites.push(favbooks)
        res.status(200).json({message: "Your favorites book", "user": userId, "favbook": favbooks});
     }
       },

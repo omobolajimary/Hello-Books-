@@ -4,7 +4,7 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books.",
   "main": "index.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +29,14 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "chai": "*",
+    "mocha": "*",
+    "chai-http": "^1.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-eslint": "^4.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1"
   }
 }
