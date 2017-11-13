@@ -195,6 +195,13 @@ module.exports = {
       
        res.status(200).json({message: "Your favorites book", "user": userId, "favbook": favbooks});
     }
+      },
+      getUpvote (req, res){
+        const upvoteArr =[]
+        sortVotes = books.sort((a,b) => b.upvote - a.upvote)
+        upvoteArr.push(sortVotes)
+        res.status(200).json({message: true, "books": sortVotes})
       }
+    
     }
 

@@ -11,7 +11,7 @@ router.post('/api/user/:userId/return/:bookId', user_controller.returnBook);
 router.post('/api/user/:userId/review/:bookId', user_controller.reviewBook);
 router.post('/api/user/:userId/fav/:bookId', user_controller.markAsFavorites);
 router.get('/api/user/:userId/favbooks', user_controller.getFavoritesBook);
-
+router.get('/api/books/sort',user_controller.getUpvote);
 
 
 
