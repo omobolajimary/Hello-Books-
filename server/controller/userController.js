@@ -178,7 +178,7 @@ module.exports = {
         const reviewerId = parseInt(req.params.userId, 10);
         let userExist;
         favorites.forEach((f) =>{
-          const userNumber = parseInt(u.userId,10);
+          const userNumber = parseInt(f.userId,10);
           if (userNumber === reviewerId)
            {
             userExist= f;
@@ -190,11 +190,10 @@ module.exports = {
       }
       else{
         let userFavorites = [];
-        userFavorites = userExist
         let favbooks = userExist.bookId
         let userId = userExist.userId
       
-       res.status(200).json({message: "Your favorites book", "favbook": favbooks, "user": userId});
+       res.status(200).json({message: "Your favorites book", "user": userId, "favbook": favbooks});
     }
       }
     }
