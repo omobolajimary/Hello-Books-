@@ -10,7 +10,7 @@ router.post('/api/user/:userId/borrow/:bookId', user_controller.borrowBook);
 router.post('/api/user/:userId/return/:bookId', user_controller.returnBook);
 router.post('/api/user/:userId/review/:bookId', user_controller.reviewBook);
 router.post('/api/user/:userId/fav/:bookId', user_controller.markAsFavorites);
-router.get(' /api/users/:userId/favbooks', user_controller.tgetFavoritesBook);
+router.get(' /api/users/:userId/favbooks', user_controller.getFavoritesBook);
 
 
 
