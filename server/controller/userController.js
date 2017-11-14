@@ -47,6 +47,10 @@ module.exports = {
             }
             })
         }
+        else if (bookExist.bookStatus!== "unavailable"){
+          res.status(200).json({message:'Approved to borrow', "bookName": exist.bookName, "bookId": bookId, 
+    "Admin": userExist.username});
+        }
         else {
           let lastBorrowed=Math.max.apply(Math,borrowed.map(function(b){return parseInt(b.borrowId, 10);}))
             borrowed.push({borrowId: ++lastBorrowed, userId:userExist.userId, bookId:bookExist.bookId})

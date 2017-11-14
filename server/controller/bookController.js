@@ -5,18 +5,25 @@ module.exports = {
 //API to Post book
     create (req,res) {
         req.body.bookId = books.length +1
-            if(req.body.bookName===" "){
-                res.status(400).send({message:"Book Name is required",})
+            if(req.body.bookName ===" "){
+                return res.status(400).json({message:"Book Name is required",})
             }
-            else if(req.body.author===" "){
-                res.status(400).send({message:"Author Name is required",})
+            else if (req.book.bookName===!isNAN){
+                return res.status(400).json({message:"Book name cannnot be a number",})
+
+            }
+            else if (!isNaN(item.Author)){
+                return res.status(500).json({ status: false, message: "Name of Author cannot be a number"});
+            }
+            else if (req.body.author===" "){
+                return res.status(400).send({message:"Author Name is required",})
             }
             else if(req.body.bookStatus===" "){
-                res.status(400).send({message:"Book Status is required",})
+                return res.status(400).send({message:"Book Status is required",})
             }
             else if (req.body.bookStatus === "available" || req.body.bookStatus === "unavailable") {
   	            books.push(req.body);
-                    res.status(200).json({message:'book added successfully', "data": req.body});
+                    return res.status(200).json({message:'book added successfully', "data": req.body});
             }
             
     },
@@ -35,9 +42,12 @@ module.exports = {
         if (!bookExist) {
             res.status(404).json("This book does not exist")
         }
-
-        else{
-            return res.status(201).json(books[bookId-1] = req.body);
+        else if (req.body.author === " " || req.body.bookName=== "" || req.body.bookStatus=== ""){
+            res.status(404).json("None of the fields can be empty")
+        } 
+        else {
+            
+             res.status(201).json(books[bookId-1] = req.body);
             
         } 
     },

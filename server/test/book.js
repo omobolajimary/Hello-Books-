@@ -27,11 +27,11 @@ it('it should post a book when all input supplied', (done) => {
       });
      });
 
-it('it should not post if status is neither unavailable or available', (done) => {
+it('it should not post if status is empty', (done) => {
       const item = {
         bookName: 'vehicula risus. Nulla eget metus',
         author: 'Shelley Foreman',
-        bookStatus: 'avai',
+        bookStatus: ' ',
       };
       chai.request(app)
         .post('/api/v1/books')
@@ -43,11 +43,11 @@ it('it should not post if status is neither unavailable or available', (done) =>
       });
      });
  
-it('it should not post book name is a number', (done) => {
+it('it should not post if book name is a number', (done) => {
       const item = {
         bookName: 1,
-        Author: "J.R.R. Tolkien",
-        bookStatus: "available"
+        author: 'Shelley Foreman',
+        bookStatus: 'available',
       };
       chai.request(app)
         .post('/api/v1/books')
@@ -61,9 +61,9 @@ it('it should not post book name is a number', (done) => {
  
 it('it should put a book when all input supplied correctly', (done) => {
       const item = {
-        bookName: "The Lord of the Rings",
-        Author: "J.R.R. Tolkien",
-        bookStatus: "available"
+        bookName: 'vehicula risus. Nulla eget metus',
+        author: 'Shelley Foreman',
+        bookStatus: 'available',
       };
         
       chai.request(app)
@@ -86,11 +86,11 @@ it('it should GET all the books', (done) => {
             });
       });
 
-it('it should post book currently unavailable to borrow', (done) => {
+it('it should not post book currently unavailable to borrow', (done) => {
         let item = {
-            bookName: "The Lord of the Rings",
-            Author: "J.R.R. Tolkien",
-            bookStatus: "unavailable"
+            bookName: 'vehicula risus. Nulla eget metus',
+        author: 'Shelley Foreman',
+        bookStatus: 'unavailable',
         };
         chai.request(app)
             .post('/api/v1/user/:userId/borrow/:bookId')
@@ -104,9 +104,9 @@ it('it should post book currently unavailable to borrow', (done) => {
  
  it('it should post approve to borrow if book available', (done) => {
         let item = {
-             bookName: "Heather",
-            Author: "Irwin Cantu",
-            bookStatus: "available"
+             bookName: 'vehicula risus. Nulla eget metus',
+        author: 'Shelley Foreman',
+        bookStatus: 'available',
         };
         chai.request(app)
             .post('/api/v1/user/:userId/borrow/:bookId')

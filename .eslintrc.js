@@ -3,4 +3,5 @@ module.exports = {
     "plugins": [
         "import"
     ]
+    /*eslint linebreak-style: ["error", "windows"]*/
 };
