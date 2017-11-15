@@ -1,7 +1,7 @@
 
 # Hello-Books 
 
-[![Build Status](https://travis-ci.org/omobolajimary/Hello-Books-.svg?branch=server)
+[![Build Status](https://travis-ci.org/omobolajimary/Hello-Books-.svg?branch=server)](https://travis-ci.org/omobolajimary/Hello-Books-)
 [![Coverage Status](https://coveralls.io/repos/github/omobolajimary/Hello-Books-/badge.svg)](https://coveralls.io/github/omobolajimary/Hello-Books-)
 
 
