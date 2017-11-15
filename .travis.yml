@@ -5,9 +5,12 @@ node_js:
 script:
  - npm run test
 
- after_success:
+after_success:
   - npm install codeclimate-test-reporter -g
   - npm run coverage
-  addons:
+
+
+addons:
   code_climate:
-    repo_token: cFN2SFFgpq0GVUZQnLXZS05sODSA6QEHr
+  repo_token: cFN2SFFgpq0GVUZQnLXZS05sODSA6QEHr
+  
