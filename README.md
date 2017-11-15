@@ -31,7 +31,7 @@ https://hellobookandela.herokuapp.com/
 
 
 # Published Template
-https://omobolajimary.github.io/Hello-Books/
+https://omobolajimary.github.io/Hello-Books-/
 
 # End points
  
