@@ -1,40 +1,38 @@
-const books= 
-[
-    {
-		"bookId": "1",
-		"bookName": "eu elit. Nulla facilisi. Sed",
-		"author": "Heather Washington",
-		"bookStatus":"available",
-		"upvote":"12"
-	},
-	{
-		"bookId": "2",
-		"bookName": "in faucibus orci luctus et",
-		"author": "Nola Fuller",
-		"bookStatus":"available",
-		"upvote":"10"
-	},
-	{
-		"bookId": "3",
-		"bookName": "cursus, diam at pretium aliquet,",
-		"author": "Vivien Spence",
-		"bookStatus":"available",
-		"upvote":"5"
-	},
-	{
-		"bookId": "4",
-		"bookName": "vehicula risus. Nulla eget metus",
-		"author": "Shelley Foreman",
-		"bookStatus":"available",
-		"upvote":3
-	},
-	{
-		"bookId": "5",
-		"bookName": "posuere cubilia Curae; Phasellus ornare.",
-		"author": "Beau Harrington",
-		"bookStatus":"available",
-		"upvote": "4"
-	},
+const books = [
+  {
+    bookId: '1',
+    bookName: 'eu elit. Nulla facilisi. Sed',
+    author: 'Heather Washington',
+    bookStatus: 'available',
+    upvote: '12',
+  },
+  {
+    bookId: '2',
+    bookName: 'in faucibus orci luctus et',
+    author: 'Nola Fuller',
+    bookStatus: 'available',
+    upvote: '10',
+  },
+  {
+    bookId: '3',
+    author: 'Vivien Spence',
+    bookStatus: 'available',
+    upvote: '5',
+  },
+  {
+    bookId: '4',
+    bookName: 'vehicula risus. Nulla eget metus',
+    author: 'Shelley Foreman',
+    bookStatus: 'available',
+    upvote: '3',
+  },
+  {
+    bookId: '5',
+    bookName: 'posuere cubilia Curae; Phasellus ornare',
+    author: 'Beau Harrington',
+    bookStatus: 'available',
+    upvote: '4', 
+  },
 	{
 		"bookId": "6",
 		"bookName": "sapien. Aenean massa. Integer vitae",
@@ -83,7 +81,8 @@ const books=
 		"author": "Jameson Hernandez",
 		"bookStatus":"available"
 	}
-    ]
+	
+]
 	module.exports = books;
 
 
