@@ -1,5 +1,8 @@
 
-# Hello-Books
+# Hello-Books 
+
+[![Build Status](https://travis-ci.org/omobolajimary/Hello-Books-.svg?branch=server)
+[![Coverage Status](https://coveralls.io/repos/github/omobolajimary/Hello-Books-/badge.svg)](https://coveralls.io/github/omobolajimary/Hello-Books-)
 
 
 # Description
@@ -94,7 +97,7 @@ https://omobolajimary.github.io/Hello-Books-/
 	
  *   **Endpoint to get books with the most upvotes**
  
-        	GET: /api/v1/books/sorted
+        	GET: /api/v1/books/sort
 
 
 
