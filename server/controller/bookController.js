@@ -56,6 +56,8 @@ module.exports = {
     getAllBooks (req, res) {
         res.json(books);
     },
+
+
     //API to approve to Borrow
     approveBorrowedBook (req, res) {
 	const borrowerId = parseInt(req.params.userId, 10);
@@ -80,8 +82,6 @@ module.exports = {
           }
         });
 
-
- 
     if(bookExist.bookStatus !== "unavailable"){
 
       res.status(200).json({message:'Approved to borrow', "bookName": bookExist.bookName, "bookId": bookIden, 
@@ -89,13 +89,12 @@ module.exports = {
     }
     else 
       {
-      res.status(404).json({message:"book currently unavailable to borrow","bookName": bookExist.bookName, 
-    "bookId": bookIden, "status": bookExist.bookStatus, "Admin": userExist.username});
+      res.status(404).json({message:"Book currently unavailable to borrow","bookName": bookExist.bookName, 
+    "bookId": bookIden, "status": bookExist.bookStatus, "Admin": userExist.userName});
       
     }
 },
   
-
 //API Endpoint to accept returned book
 approveReturnedBook (req, res) {
 
@@ -121,7 +120,7 @@ approveReturnedBook (req, res) {
           }
         });
       res.status(200).json({message:"This book is successfully returned", "bookName": bookExist.bookName, "bookId": bookId, 
-    "Admin": userExist.username})
+    "Admin": userExist.userName})
       
   
 	}
