@@ -43,12 +43,12 @@ module.exports = {
         if (!bookExist) {
             res.status(404).json("This book does not exist")
         }
-        else if (req.body.author === " " || req.body.bookName=== "" || req.body.bookStatus=== ""){
+        else if (req.body.author === " " || req.body.bookName=== " " || req.body.bookStatus=== " "){
             res.status(404).json("None of the fields can be empty")
         } 
         else {
             
-             res.status(200).json(books[bookId-1] = req.body);
+             res.status(201).json({message:'successful', bookName: req.body.bookName, bookId: req.body.bookId, author:req.body.author, bookStatus:req.body.bookStatus,upvote:req.body.upvote});
             
         } 
     },
@@ -81,8 +81,8 @@ module.exports = {
             return bookExist
           }
         });
-
-    if(bookExist.bookStatus !== "unavailable"){
+console.log(bookExist.bookStatus)
+    if(bookExist.bookStatus === "available"){
 
       res.status(200).json({message:'Approved to borrow', "bookName": bookExist.bookName, "bookId": bookIden, 
     "Admin": userExist.userName});

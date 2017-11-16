@@ -8,7 +8,7 @@ router.post('/api/v1/books', bookController.create);
 router.get('/api/v1/books', bookController.getAllBooks);
 router.put('/api/v1/books/:bookId', bookController.update);
 router.put('/api/v1/users/:userId/borrow/:bookId', bookController.approveBorrowedBook);
-router.put('/api/v1/users/:userId/borrow/:bookId', bookController.approveReturnedBook);
+router.put('/api/v1/users/:userId/return/:bookId', bookController.approveReturnedBook);
 router.post('/api/v1/users/:userId/borrow/:bookId', userController.borrowBook);
 router.post('/api/v1/users/:userId/return/:bookId', userController.returnBook);
 router.post('/api/v1/users/:userId/review/:bookId', userController.reviewBook);

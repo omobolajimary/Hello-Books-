@@ -1,4 +1,4 @@
-const Book = require('../models/book');
+const Books = require('../models/book');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../../app.js');
@@ -59,22 +59,24 @@ it('it should not post if book name is a number', (done) => {
     });
   
  
-// it('it should put a book when all input supplied correctly', (done) => {
-//       const item = {
-//         bookName: 'vehicula risus. Nulla eget metus',
-//         author: 'Shelley Foreman',
-//         bookStatus: 'available',
-//       };
+it('it should put a book when all input supplied correctly', (done) => {
+      const item = {
+        bookId:'1',
+        bookName: 'vehicula risus. Nulla eget metus',
+        author: 'Shelley Foreman',
+        bookStatus: 'available',
+        upvote:'13'
+      };
         
-//       chai.request(app)
-//         .put('/api/v1/books/:bookId')
-//         .send({ item })
-//         .end((err, res) => {
-//           res.should.have.status(201);
-//               done();
+      chai.request(app)
+        .put('/api/v1/books/:bookId')
+        .send({ item })
+        .end((err, res) => {
+          res.should.have.status(201);
+              done();
             
-//       });
-//      });
+      });
+     });
 
 it('it should GET all the books', (done) => {
         chai.request(app)
@@ -104,12 +106,13 @@ it('it should not post book currently unavailable to borrow', (done) => {
  
 //  it('it should post approve to borrow if book available', (done) => {
 //         let item = {
+//           userId: '1',
 //              bookName: 'vehicula risus. Nulla eget metus',
 //         author: 'Shelley Foreman',
 //         bookStatus: 'available',
 //         };
 //         chai.request(app)
-//             .post('/api/v1/:userId/borrow/:bookId')
+//             .put('/api/v1/users/:userId/borrow/:bookId')
 //             .send(item)
 //             .end((err, res) => {
 //                 res.should.have.status(200);
