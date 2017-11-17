@@ -48,7 +48,7 @@ module.exports = {
         } 
         else {
             
-             res.status(201).json({message:'successful', bookName: req.body.bookName, bookId: req.body.bookId, author:req.body.author, bookStatus:req.body.bookStatus,upvote:req.body.upvote});
+             res.status(200).json({message:'successful', bookName: req.body.bookName, bookId: req.body.bookId, author:req.body.author, bookStatus:req.body.bookStatus,upvote:req.body.upvote});
             
         } 
     },
