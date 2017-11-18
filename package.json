@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "./node_modules/.bin/mocha server/test/book.js",
+    "test": "./node_modules/.bin/mocha dummydataServer/test/book.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
