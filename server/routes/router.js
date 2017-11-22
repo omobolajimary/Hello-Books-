@@ -16,6 +16,7 @@ const userController = require('../controller/userController');
 // router.get('/api/v1/users/:userId/favbooks', userController.getFavoritesBook);
 // router.get('/api/v1/books/sort', userController.getUpvote);
 router.post('/api/v1/user/signup', userController.signup);
+router.post('/api/v1/user/signin', userController.signin);
 
 
 

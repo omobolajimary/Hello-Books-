@@ -2,6 +2,7 @@ const user = require("../models").user;
 var bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
 const hash = bcrypt.hashSync("my password", salt);
+const jwt = require("jsonwebtoken");
 
 
 
@@ -41,5 +42,34 @@ module.exports = {
       }
     });
     },
+    signin(req, res) {
+      if(req.body.userName === ""){
+        res.json({message:"Username is required"})
+        }
+      else if (req.body.password === ""){
+        res.json({message:"Password is required"})
+      }
+      user.findOne({
+        where: {
+          userName: req.body.userName,
+        },
+      })
+      .then((User,err) => {
+        if(!User){
+          res.status(404).send({ status: false, message:'Authentication failed. User not found'});
+          }
+        else if(User){
+          if(bcrypt.compareSync(req.body.password, User.password)){
+            const token = jwt.sign({
+                  data: User
+                }, 'secret', { expiresIn: "1440" });
+            res.status(200).send({ status: true, message:'Authentication Successful', token: token});
+          }else{
+            res.status(401).send({ status: false, message:'Authentication failed. Incorrect Password'});
+          }
+        }
+      })
+    },
+    
 
 }
