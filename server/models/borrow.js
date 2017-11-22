@@ -1,14 +1,20 @@
 
 module.exports = (sequelize, DataTypes) => {
-  var Borrow = sequelize.define('Borrow', {
-    borrowId: DataTypes.INTEGER,
-    bookId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+  const borrow = sequelize.define('borrow', {
+    bookId: {
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      alloNull:false
+    }
   }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        
-  };
-  return Borrow;
+      }
+    }
+  });
+  return borrow;
 };

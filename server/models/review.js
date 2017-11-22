@@ -1,10 +1,17 @@
 
 module.exports = (sequelize, DataTypes) => {
-  var Review = sequelize.define('Review', {
-    reviewId: DataTypes.INTEGER,
-    bookId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER,
-    reviewText: DataTypes.STRING
+  const review = sequelize.define('review', {
+    bookId: {
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      alloNull:false
+    },
+    reviewText:{
+      type:DataTypes.TEXT,
+    }
   }, {
     classMethods: {
       associate: function(models) {
@@ -12,5 +19,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return Review;
+  return review;
 };

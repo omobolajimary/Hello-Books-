@@ -1,20 +1,29 @@
-
+'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Favorites', {
+    return queryInterface.createTable('books', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      favoritesId: {
+      bookName: {
+        type: Sequelize.STRING
+      },
+      bookStatus: {
+        type: Sequelize.STRING
+      },
+      Author: {
+        type: Sequelize.STRING
+      },
+      Desciption: {
+        type: Sequelize.TEXT
+      },
+      upvotes: {
         type: Sequelize.INTEGER
       },
-      bookId: {
-        type: Sequelize.INTEGER
-      },
-      userId: {
+      downvote: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -28,6 +37,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Favorites');
+    return queryInterface.dropTable('books');
   }
 };

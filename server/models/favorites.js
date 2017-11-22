@@ -1,9 +1,14 @@
 
 module.exports = (sequelize, DataTypes) => {
-  var Favorites = sequelize.define('Favorites', {
-    favoritesId: DataTypes.INTEGER,
-    bookId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+  const favorites = sequelize.define('favorites', {
+    bookId: {
+      type:DataTypes.INTEGER,
+      allowNull:false
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      alloNull:false
+    }
   }, {
     classMethods: {
       associate: function(models) {
@@ -11,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return Favorites;
+  return favorites;
 };
