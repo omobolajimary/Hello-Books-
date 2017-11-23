@@ -43,6 +43,8 @@ module.exports = {
     });
     },
     signin(req, res) {
+      const userName = req.body.userName;
+      const password = req.body.password;
       if(req.body.userName === ""){
         res.json({message:"Username is required"})
         }
@@ -59,6 +61,8 @@ module.exports = {
           res.status(404).send({ status: false, message:'Authentication failed. User not found'});
           }
         else if(User){
+          // console.log(User)
+          // console.log(User.password)
           if(bcrypt.compareSync(req.body.password, User.password)){
             const token = jwt.sign({
                   data: User
@@ -70,6 +74,8 @@ module.exports = {
         }
       })
     },
-    
+    signout (req, res) {
+      
+    }
 
 }
