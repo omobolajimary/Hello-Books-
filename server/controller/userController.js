@@ -1,15 +1,15 @@
-const user = require("../models").user;
-var bcrypt = require('bcrypt');
+const user = require('../models').user;
+const bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(10);
-const hash = bcrypt.hashSync("my password", salt);
-const jwt = require("jsonwebtoken");
+const hash = bcrypt.hashSync('my password', salt);
+const jwt = require('jsonwebtoken');
 
 
 
 module.exports = {
-    signup(req, res) {
-      if(req.body.userName === ""){
-        res.json({message:"Username is required"})
+  signup(req, res) {
+    if(req.body.userName === ''){
+      res.json ({message:'Username is required')
         }
       else if (req.body.email === ""){
         res.json({message:"Email is required"})

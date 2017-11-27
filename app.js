@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv')
 const userRoute = require('./server/routes/router');
 const bodyParser = require('body-parser');
 const logger = require('morgan');

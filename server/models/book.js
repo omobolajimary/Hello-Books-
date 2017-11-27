@@ -3,6 +3,9 @@ module.exports = (sequelize, DataTypes) => {
     bookName: {
     type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+                   isAlpha: true
+                }
     },
     bookStatus: {
     type: DataTypes.STRING,
@@ -11,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     Author: {
     type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+                   isAlpha: true
+                }
     },
     Description: {
     type: DataTypes.TEXT,

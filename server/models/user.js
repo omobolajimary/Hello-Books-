@@ -5,31 +5,31 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-                   isAlphanumeric: true
-                }
+        isAlphanumeric: true,
+      }
             
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-               isEmail: true
-           }
-  },
+        isEmail: true,
+      }
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,  
-   },
+    },
   
 
-   role: {  
+    role: {  
       type: DataTypes.ENUM,
-      values: ['user', 'admin'],
-      defaultValue: "user"
+      values: [{user:0,admin:1}],
+      defaultValue: 0
 
     },
-   })
-    user.associate = (models) => {
+  })
+  user.associate = (models) => {
     user.hasMany(models.review, {
       foreignKey: 'userId',
       as: 'user'
