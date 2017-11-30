@@ -1,10 +1,14 @@
 const express = require('express');
+require('dotenv').config();
+const authenticate = require('../middleware/authenticate.js');
+const dotenv = require('dotenv').config();
 
+//dotenv.load();
 const router = express.Router();
 const bookController = require('../controller/bookController');
 const userController = require('../controller/userController');
 
-router.post('/api/v1/books', bookController.create);
+router.post('/api/v1/books', authenticate, bookController.create);
 // router.get('/api/v1/books', bookController.getAllBooks);
 // router.put('/api/v1/books/:bookId', bookController.update);
 // router.put('/api/v1/users/:userId/borrow/:bookId', bookController.approveBorrowedBook);

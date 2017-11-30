@@ -23,23 +23,20 @@ module.exports = (sequelize, DataTypes) => {
   
 
     role: {  
-      type: DataTypes.ENUM,
-      values: [{user:0,admin:1}],
-      defaultValue: 0
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
 
     },
   })
   user.associate = (models) => {
     user.hasMany(models.review, {
       foreignKey: 'userId',
-      as: 'user'
     });
     user.hasMany(models.favorites, {
       foreignKey: 'userId',
     });
     user.hasMany(models.borrow, {
       foreignKey: 'userId',
-      as: 'users'
     });
   };
   return user;

@@ -1,9 +1,10 @@
-{
+
+  {
   "development": {
-    "username": "process.env.DB_USER",
-    "password":"process.env.DB_PASS",
+    "username": "postgres",
+    "password":"bolaji",
     "database": "hello-books",
-    "host": "process.env.DB_HOST",
+    "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres",
     "operatorsAliases":  {
@@ -11,17 +12,19 @@
       "$or": "Op.or",
       "$eq": "Op.eq",
       "$gt": "Op.gt",
-     " $lt": "Op.lt",
+      "$lt": "Op.lt",
       "$lte": "Op.lte",
       "$like": "Op.like"
     }
   },
   "test": {
-    "username": "process.env.DB_USER",
-    "password": "process.env.DB_PASS",
+    "username": "process.env.DB_USERNAME",
+    "password": "process.env.DB_PASSWORD",
     "database": "hello-bookTest",
     "host": "process.env.DB_HOST",
     "port": 5432,
     "dialect": "postgres"
   }
 }
+
+  

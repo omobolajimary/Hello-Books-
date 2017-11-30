@@ -1,49 +1,49 @@
-let user = require("../models/user.js");
-let books = require("../models/book.js");
-let borrowed =require("../models/borrowed.js");
-let review =require("../models/review.js");
-let favorites =require("../models/favorites.js")
+let user = require('../models/user.js');
+let books = require('../models/book.js');
+let borrowed =require('../models/borrowed.js');
+let review =require('../models/review.js');
+let favorites =require('../models/favorites.js')
  
 module.exports = {
-//API to borrow a book
-    borrowBook (req, res) {
-        const borrowerId = parseInt(req.params.userId, 10);
-        const bookIden = parseInt(req.params.bookId, 10);
-        let userExist;
-	    let bookExist; 
-        user.forEach((u) =>{
-          const userNumber = parseInt(u.userId,10);
-          if (userNumber === borrowerId)
-           {
-            userExist= u;
-            return userExist
-           }
-        });
-        
-        books.forEach((book) =>{
-          const bookNumber = parseInt(book.bookId,10);
-          if (bookNumber === bookIden)
-          {
-            bookExist= book;
-            return bookExist
-          }
-        });
-        if (!bookExist) {
-            res.status(404).json("This book does not exist")
-        }
-        if (!userExist) {
-            res.status(404).json("user not found")
+// API to borrow a book
+  borrowBook(req, res) {
+    const borrowerId = parseInt(req.params.userId, 10);
+    const bookIden = parseInt(req.params.bookId, 10);
+    let userDetails;
+	  let bookDetails; 
+    user.forEach((user) =>{
+      const userNumber = parseInt(user.userId,10);
+      if (userNumber === borrowerId)
+      {
+        userDetails = user;
+        return userDetails;
       }
-        else if (bookExist.bookId && bookExist.bookStatus === "unavailable") {
+    });
+        
+    books.forEach((book) =>{
+      const bookNumber = parseInt(book.bookId,10);
+      if (bookNumber === bookIden)
+      {
+        bookDetails = book;
+        return bookDetails;
+      }
+    });
+    if (!bookDetails) {
+      res.status(404).json('This book does not exist')
+    }
+        if (!userDetails) {
+            res.status(404).json('user not found')
+      }
+        else if (bookDetails.bookId && bookDetails.bookStatus === 'unavailable') {
             res.status(404).json({
-            message: "This book is currently unavailable",
+            message: 'This book is currently unavailable'
             details:
             {
-            "bookName": bookExist.bookName, 
-            "bookId": bookExist.bookId, 
-            "status": bookExist.bookStatus, 
-            "username": userExist.userName, 
-            "userId": userExist.userId
+            "bookName": bookDetails.bookName, 
+            "bookId": bookDetails.bookId, 
+            "status": bookDetails.bookStatus, 
+            "username": userDetails.userName, 
+            "userId": userDetails.userId
             }
             })
         }
@@ -55,26 +55,27 @@ module.exports = {
                   status: true, 
                   message:'Book borrowed successfully. Enjoy!',
                   details: {
-                  "bookName": bookExist.bookName,
+                  "bookName": bookDetails.bookName,
                   "bookId": bookIden, 
-                  "username": userExist.userName,
+                  "username": userDetails.userName,
                   "userId": borrowerId
                   }
              })
         }
         },
+
     //API to return borrowed book
     returnBook (req, res) {
         const returneeId = parseInt(req.params.userId, 10);
         const bookIden = parseInt(req.params.bookId, 10);
-        let userExist;
-	    let bookExist; 
-        user.forEach((u) =>{
-          const userNumber = parseInt(u.userId,10);
+        let userDetails;
+	    let bookDetails; 
+        user.forEach((user) =>{
+          const userNumber = parseInt(user.userId,10);
           if (userNumber === returneeId)
            {
-            userExist= u;
-            return userExist
+            userDetails= user;
+            return userDetails
            }
         });
         
@@ -82,20 +83,20 @@ module.exports = {
           const bookNumber = parseInt(book.bookId,10);
           if (bookNumber === bookIden)
           {
-            bookExist= book;
-            return bookExist
+            bookDetails= book;
+            return bookDetails
           }
         });
-        if (!bookExist) {
-            res.status(404).json("This book does not exist")
+        if (!bookDetails) {
+            res.status(404).json('This book does not exist')
         }
-        if (!userExist) {
-            res.status(404).json("user not found")
+        if (!userDetails) {
+            res.status(404).json('user not found')
       }
       else{
           res.json({ status: true, message:'Thanks for the return', 
-            "bookName": bookExist.bookName, "bookId": bookId, 
-            "username": userExist.username, "userId": userId} )
+            'bookName': bookDetails.bookName, 'bookId': bookId, 
+            'username': userDetails.username, 'userId': userId} )
       }
 	},
     //API to review a book
@@ -103,14 +104,14 @@ module.exports = {
         let reviewId = review.length +1 ;
         const reviewerId = parseInt(req.params.userId, 10);
         const bookIden = parseInt(req.params.bookId, 10);
-        let userExist;
+        let userDetails;
 	    let bookExist; 
-        user.forEach((u) =>{
-          const userNumber = parseInt(u.userId,10);
+        user.forEach((user) =>{
+          const userNumber = parseInt(user.userId,10);
           if (userNumber === reviewerId)
            {
-            userExist= u;
-            return userExist
+            userDetails= user;
+            return userDetails
            }
         });
         
@@ -118,24 +119,24 @@ module.exports = {
           const bookNumber = parseInt(book.bookId,10);
           if (bookNumber === bookIden)
           {
-            bookExist= book;
-            return bookExist
+            bookDetails= book;
+            return bookDetails
           }
         });
-        if (!bookExist) {
-            res.status(404).json("This book does not exist")
+        if (!bookDetails) {
+            res.status(404).json('This book does not exist')
         }
-        if (!userExist) {
-            res.status(404).json("user not found")
+        if (!userDetails) {
+            res.status(404).json('user not found')
       }
-        if (bookExist && bookExist.bookStatus === "unavailable") {
-            res.status(404).json({message: "This book is currently unavailable", "bookName": bookExist.bookName, 
-            "bookId": bookId, "status": bookExist.bookStatus, "username": userExist.username, "userId": userId})
+        if (bookDetails && bookDetails.bookStatus === 'unavailable') {
+            res.status(404).json({message: 'This book is currently unavailable', 'bookName': bookDetails.bookName, 
+            'bookId': bookId, 'status': bookDetails.bookStatus, 'username': userDetails.username, 'userId': userId})
         }
         else {
              review.push(reviewerId, bookIden, req.body.reviewText)
-                res.json({ status: true, message:'Thanks for the review!', "bookName": bookExist.bookName, "bookId": bookIden, 
-                "username": userExist.userName, "userId": reviewerId, "reviewText":req.body.reviewText, "reviewId":reviewId} )
+                res.json({ status: true, message:'Thanks for the review!', 'bookName': bookDetails.bookName, 'bookId': bookIden, 
+                'username': userDetails.userName, 'userId': reviewerId, 'reviewText':req.body.reviewText, 'reviewId':reviewId} )
         }
     },
     //API to mark a book as favorites
@@ -143,14 +144,14 @@ module.exports = {
         let favoritesId = favorites.length + 1;
         const reviewerId = parseInt(req.params.userId, 10);
         const bookIden = parseInt(req.params.bookId, 10);
-        let userExist;
-	    let bookExist; 
-        user.forEach((u) =>{
-          const userNumber = parseInt(u.userId,10);
+        let userDetails;
+	    let bookDetails; 
+        user.forEach((user) =>{
+          const userNumber = parseInt(user.userId,10);
           if (userNumber === reviewerId)
            {
-            userExist= u;
-            return userExist
+            userDetails= user;
+            return userDetails
            }
         });
         
@@ -158,50 +159,51 @@ module.exports = {
           const bookNumber = parseInt(book.bookId,10);
           if (bookNumber === bookIden)
           {
-            bookExist= book;
-            return bookExist
+            bookDetails= book;
+            return bookDetails
           }
         });
-        if (!bookExist) {
-            res.status(404).json("This book does not exist")
+        if (!bookDetails) {
+            res.status(404).json('This book does not exist')
         }
-        if (!userExist) {
-            res.status(404).json("user not found")
+        if (!userDetails) {
+            res.status(404).json('user not found')
       }
       else{
           favorites.push(bookIden, reviewerId)
-          res.status(200).json({status: true, message:"Book marked as favorites", "bookName": bookExist.bookName, "bookId": bookIden, 
-                "username": userExist.userName, "userId": reviewerId, "favoritesId": favoritesId
+          res.status(200).json({status: true, message:'Book marked as favorites', 'bookName': bookDetails.bookName, 'bookId': bookIden, 
+                'username': userDetails.userName, 'userId': reviewerId, 'favoritesId': favoritesId
           })
       }
     },
+
     getFavoritesBook (req, res) {
         const reviewerId = parseInt(req.params.userId, 10);
-        let userExist;
-        favorites.forEach((f) =>{
-          const userNumber = parseInt(f.userId,10);
+        let userDetails;
+        favorites.forEach((favorites) =>{
+          const userNumber = parseInt(favorites.userId,10);
           if (userNumber === reviewerId)
            {
-            userExist= f;
-            return userExist
+            userDetails= favorites;
+            return userDetails
            }
         });
-        if (!userExist) {
-            res.status(404).json("user not found")
+        if (!userDetails) {
+            res.status(404).json('user not found')
       }
       else{
         let userFavorites = [];
-        let favbooks = userExist.bookId
-        let userId = userExist.userId
+        let favbooks = userDetails.bookId
+        let userId = userDetails.userId
       userFavorites.push(favbooks)
-       res.status(200).json({message: "Your favorites book", "user": userId, "favbook": favbooks});
+       res.status(200).json({message: 'Your favorites book', 'user': userId, 'favbook': favbooks});
     }
       },
       getUpvote (req, res){
         const upvoteArr =[]
         sortVotes = books.sort((a,b) => b.upvote - a.upvote)
         upvoteArr.push(sortVotes)
-        res.status(200).json({message: true, "books": sortVotes})
+        res.status(200).json({message: true, 'books': sortVotes})
       }
     
     }
