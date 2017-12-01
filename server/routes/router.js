@@ -3,11 +3,13 @@ require('dotenv').config();
 const authenticate = require('../middleware/authenticate.js');
 const dotenv = require('dotenv').config();
 
-//dotenv.load();
+// dotenv.load();
 const router = express.Router();
 const bookController = require('../controller/bookController');
 const userController = require('../controller/userController');
 
+router.post('/api/v1/user/signup', userController.signup);
+router.post('/api/v1/user/signin', userController.signin);
 router.post('/api/v1/books', authenticate, bookController.create);
 // router.get('/api/v1/books', bookController.getAllBooks);
 // router.put('/api/v1/books/:bookId', bookController.update);
@@ -19,8 +21,7 @@ router.post('/api/v1/books', authenticate, bookController.create);
 // router.post('/api/v1/users/:userId/fav/:bookId', userController.markAsFavorites);
 // router.get('/api/v1/users/:userId/favbooks', userController.getFavoritesBook);
 // router.get('/api/v1/books/sort', userController.getUpvote);
-router.post('/api/v1/user/signup', userController.signup);
-router.post('/api/v1/user/signin', userController.signin);
+
 
 
 

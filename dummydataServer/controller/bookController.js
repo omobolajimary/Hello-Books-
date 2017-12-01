@@ -24,7 +24,7 @@ module.exports = {
     }
     else if (req.body.bookStatus === 'available' || req.body.bookStatus === 'unavailable') {
   	  books.push(req.body);
-      return res.status(200).json({message:'book added successfully', 'data': req.body});
+      return res.status(200).json({message:'book added successfully', bookName: req.body.bookName, bookId: req.body.bookId, author:req.body.author, bookStatus:req.body.bookStatus,upvote:req.body.upvote});
     }
             
   },
