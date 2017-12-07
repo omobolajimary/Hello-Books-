@@ -44,7 +44,6 @@ exports.create = (req, res) => {
           author: req.body.author,
           bookStatus: req.body.bookStatus,
           description: req.body.description,
-          user_id: userId,
         })
           .then((Book) => {
             res.status(200).send({ status: true, message: 'Book Successfully Added', data: Book });
@@ -53,6 +52,47 @@ exports.create = (req, res) => {
         return res.status(500).json({ status: false, message: 'books can either be available or unavailable' });
       }
       console.log(req.body);
+    });
+};
+exports.modify = (req, res) => {
+  const {
+    userId,
+  } = req.decoded.id;
+  user.findById(req.decoded.id).then((User) => {
+    if (User.role !== 'admin') {
+      return res.status(404).json({message: 'You are not authorized' });
+    }
+  });
+  book.findOne({
+    where: {
+      id: req.params.bookId,
+    },
+  })
+    .then((Book) => {
+      if (!Book) {
+        res.status(400).send({ status: false, message: 'Book not found' });
+      }
+      else {
+        book.update(
+          {
+            bookName: req.body.bookName,
+            author: req.body.author,
+            bookStatus: req.body.bookStatus,
+            description: req.body.description,
+            upvotes: parseInt(req.body.upvotes),
+          },
+          {
+            where: {
+              id: req.params.bookId,
+
+            },
+          },
+        )
+          .then((Book) => {
+            res.status(200).send({ status: true, message: 'Book Successfully Updated', data: req.body });
+          });
+        console.log(req.body);
+      } 
     });
 };
 
