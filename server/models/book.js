@@ -1,25 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
   const book = sequelize.define('book', {
     bookName: {
-    type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-                   isAlpha: true
-                }
     },
     bookStatus: {
-    type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    Author: {
-    type: DataTypes.STRING,
+    author: {
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-                   isAlpha: true
-                }
+      isAlpha: {
+        message: 'This field can only contain letters',
+      },
+  
     },
-    Description: {
-    type: DataTypes.TEXT,
+    description: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
 
@@ -33,12 +31,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0,
     },
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+  book.associate = (models) => {
+    book.hasMany(models.borrow, {
+      foreignKey: 'book_id',
+    });
+    book.hasMany(models.review, {
+      foreignKey: 'book_id',
+      as: 'review',
+    });
+  };
   return book;
 };

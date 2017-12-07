@@ -10,5 +10,5 @@ module.exports = {
     dialect: 'postgres',
     
   },
-  secret:'secret',
+  secret: 'secret',
 }

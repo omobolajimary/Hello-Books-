@@ -4,7 +4,7 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books.",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "./node_modules/.bin/mocha dummydataServer/test/book.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
@@ -13,7 +13,10 @@
     "url": "git+https://github.com/omobolajimary/Hello-Books-.git"
   },
   "keywords": [
-    "book"
+    "book",
+    "borrow",
+    "return",
+    "library"
   ],
   "author": "omobolaji adediran",
   "license": "ISC",
@@ -39,8 +42,7 @@
     "morgan": "^1.8.2",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.22.7",
-    "validator": "^9.1.2"
+    "sequelize": "^4.22.7"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
@@ -52,7 +54,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.12.4",
     "sequelize-cli": "^3.0.0"
   }
 }
-

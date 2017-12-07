@@ -1,7 +1,6 @@
-'use strict';
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('books', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('books', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,19 +10,19 @@ module.exports = {
       bookName: {
         type: Sequelize.STRING
       },
+      author: {
+        type: Sequelize.STRING
+      },
       bookStatus: {
         type: Sequelize.STRING
       },
-      Author: {
-        type: Sequelize.STRING
-      },
-      Desciption: {
+      description: {
         type: Sequelize.TEXT
       },
       upvotes: {
         type: Sequelize.INTEGER
       },
-      downvote: {
+      downvotes: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -36,7 +35,5 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('books');
-  }
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('books');
 };

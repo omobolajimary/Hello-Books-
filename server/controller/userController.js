@@ -47,7 +47,7 @@ module.exports = {
             email: req.body.email,
           })
             .then((User) => {
-              res.status(200).send({ status: true, message:'Successful', data: User});
+              res.status(200).send({ status: true, message:'Successful', data: User });
             });
         }
       });
@@ -77,8 +77,11 @@ module.exports = {
         else if (User) {
           if (bcrypt.compareSync(req.body.password, User.password)) {
             const token = jwt.sign({
-              data: User,
+              id: User.id,
+              // userName: User.userName, email: User.email, role: User.role,
+              
             }, 'secret', { expiresIn: '60 minutes' });
+            console.log(User.userName, User.role, User.email);
             res.status(200).send({ status: true, message:'Authentication Successful', token: token });
           } else {
             res.status(401).send({ status: false, message:'Authentication failed. Incorrect Password'});
@@ -86,7 +89,7 @@ module.exports = {
         }
       })
   },
-  // signout(req, res) {
-      
-  // }
+  signout(req, res) {
+    return res.status(200).send({ message: 'You have successfully signed out', token: null });
+  },
 };

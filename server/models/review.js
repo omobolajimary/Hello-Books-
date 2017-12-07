@@ -1,17 +1,9 @@
-
+'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const review = sequelize.define('review', {
-    bookId: {
-      type:DataTypes.INTEGER,
-      allowNull:false
-    },
-    userId: {
-      type:DataTypes.INTEGER,
-      alloNull:false
-    },
-    reviewText:{
-      type:DataTypes.TEXT,
-    }
+  var review = sequelize.define('review', {
+    bookId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
+    reviewText: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

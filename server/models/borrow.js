@@ -1,14 +1,8 @@
-
+'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const borrow = sequelize.define('borrow', {
-    bookId: {
-      type:DataTypes.INTEGER,
-      allowNull:false
-    },
-    userId: {
-      type:DataTypes.INTEGER,
-      alloNull:false
-    }
+  var borrow = sequelize.define('borrow', {
+    bookId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
