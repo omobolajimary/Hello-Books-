@@ -34,10 +34,10 @@ module.exports = (sequelize, DataTypes) => {
   });
   book.associate = (models) => {
     book.hasMany(models.borrow, {
-      foreignKey: 'book_id',
+      foreignKey: 'bookId',
     });
     book.hasMany(models.review, {
-      foreignKey: 'book_id',
+      foreignKey: 'bookId',
       as: 'review',
     });
   };

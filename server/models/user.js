@@ -20,13 +20,13 @@ module.exports = (sequelize, DataTypes) => {
   });
   user.associate = (models) => {
     user.hasMany(models.review,{
-      foreignKey: 'user_id',
+      foreignKey: 'userId',
     });
     user.hasMany(models.favorites,{
-      foreignKey: 'user_id',
+      foreignKey: 'userId',
     });
     user.hasMany(models.borrow,{
-      foreignKey: 'user_id',
+      foreignKey: 'userId',
     });
   };
   return user;

@@ -95,4 +95,12 @@ exports.modify = (req, res) => {
       } 
     });
 };
+exports.getAllBooks = (req, res) => {
+  book.findAll({
+    include: [
+      { all: true }
+    ]
+  })
+    .then(books => res.json(books));
+};
 
