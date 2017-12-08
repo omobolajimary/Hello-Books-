@@ -3,9 +3,9 @@ const express = require('express');
 
 const app = express();
 require('dotenv').config();
-const dotenv = require('dotenv').config();
+// const dotenv = require('dotenv').config();
 
-//dotenv.load();
+// dotenv.load();
 
 const router = require('./server/routes/router');
 const bodyParser = require('body-parser');
@@ -16,8 +16,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 server.listen(port);
 const Console = console;
-Console.log('sever up and running' + ' ' + port);
-
+Console.log(`${'sever up and running'}${port}`);
 
 
 // Log requests to the console.

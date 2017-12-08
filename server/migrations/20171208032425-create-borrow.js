@@ -8,11 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      bookId: {
-        type: Sequelize.INTEGER
+      borrowDate: {
+        type: Sequelize.DATE,
       },
-      userId: {
-        type: Sequelize.INTEGER
+      expectedReturnDate: {
+        type: Sequelize.DATE,
+      },
+      actualReturnDate: {
+        type: Sequelize.DATE,
+      },
+      borrowStatus: {
+        type: Sequelize.ENUM,
+        values: ['pending', 'accepted'], 
+      },
+      returnStatus: {
+        type: Sequelize.ENUM,
+        values: ['pending', 'accepted'],
       },
       createdAt: {
         allowNull: false,
