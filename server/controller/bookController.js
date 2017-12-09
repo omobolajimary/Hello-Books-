@@ -1,5 +1,6 @@
 
 const models = require('../models');
+// import models from '/../models';
 
 const {
   book, user, borrow,
@@ -19,14 +20,11 @@ exports.create = (req, res) => {
   });
   if (req.body.bookName === ' ') {
     return res.status(400).json({ message: 'Book Name is required' });
-  }
-  else if (req.body.author === ' ') {
+  } else if (req.body.author === ' ') {
     return res.status(500).send({ message: 'Author Name is required' });
-  }
-  else if (req.body.bookStatus === ' ') {
+  } else if (req.body.bookStatus === ' ') {
     return res.status(500).send({ message: 'Book Status is required' });
-  }
-  else if (req.body.description === ' ') {
+  } else if (req.body.description === ' ') {
     return res.status(500).send({ message: 'Description is required' });
   }
   book.findOne({
@@ -73,8 +71,7 @@ exports.modify = (req, res) => {
     .then((Book) => {
       if (!Book) {
         res.status(400).send({ status: false, message: 'Book not found' });
-      }
-      else {
+      } else {
         book.update(
           {
             bookName: req.body.bookName,
@@ -131,13 +128,13 @@ exports.approveToBorrow = (req, res) => {
           } else {
             borrow.findOne({
               where: {
-                book_id: req.params.bookId,
-                user_id: req.params.userId,
+                bookId: req.params.bookId,
+                userId: req.params.userId,
               },
             })
               .then((Borrow) => {
                 if (!Borrow) {
-                  res.status(400).send({ status: false, message: 'This user has not requested for this book' });
+                  res.status(400).send({ status: false, message: 'You have not requested for this book' });
                 } else {
                 // Check if the status of a book is available or not
                   if (book.bookStatus !== 'unavailable') {

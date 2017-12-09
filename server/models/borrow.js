@@ -1,6 +1,15 @@
 
 module.exports = (sequelize, DataTypes) => {
   const borrow = sequelize.define('borrow', {
+    bookId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
     borrowDate: {
       type: DataTypes.DATE,
       allowNull: true,

@@ -4,8 +4,8 @@
   "description": "Hello-Books is a simple application that helps manage a library and its processes like stocking, tracking and renting books.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "./node_modules/.bin/mocha dummydataServer/test/book.js",
+    "start": "nodemon app.js --exec babel-node",
+    "test": "./node_modules/.bin/mocha dummydataServer/test/book.js --compiler js:babel-register",
     "lint": "eslint *.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
@@ -44,6 +44,7 @@
     "sequelize": "^4.22.7"
   },
   "devDependencies": {
+    "babel-register": "^6.26.0",
     "coveralls": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",

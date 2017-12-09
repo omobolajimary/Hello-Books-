@@ -3,9 +3,6 @@ const express = require('express');
 
 const app = express();
 require('dotenv').config();
-// const dotenv = require('dotenv').config();
-
-// dotenv.load();
 
 const router = require('./server/routes/router');
 const bodyParser = require('body-parser');
